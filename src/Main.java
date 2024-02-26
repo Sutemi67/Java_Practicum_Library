@@ -2,7 +2,19 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        abstract class LibraryItem {
+
+        interface Transportable {
+            String getCurrentLibrary();
+
+            void moveToNewLibrary();
+        }
+        interface Ownable {
+            void takeFromLibrary();
+
+            void returnToLibrary();
+        }
+
+        abstract class LibraryItem implements Ownable, Transportable {
             String title;
             String text;
             String owner;
@@ -34,13 +46,40 @@ public class Main {
 
         class Book extends LibraryItem {
 
+            @Override
+            public void moveToNewLibrary() {
+
+            }
+
+            @Override
+            public void takeFromLibrary() {
+
+            }
         }
 
         class Journal extends LibraryItem {
 
+            @Override
+            public void moveToNewLibrary() {
+
+            }
+
+            @Override
+            public void takeFromLibrary() {
+
+            }
         }
 
         class EBook extends LibraryItem {
+            @Override
+            public void moveToNewLibrary() {
+
+            }
+
+            @Override
+            public void takeFromLibrary() {
+
+            }
         }
     }
 }
